@@ -1,3 +1,11 @@
+<!Doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
 <div class="wrapper">
 <div class="logoBlock">
 <img class="logo" src="1722755820108.png">
@@ -46,3 +54,52 @@
 </a>
 </div>
 </div>
+    <script>
+const sliderA1 = document.querySelector(".sliderA1");
+const lineXA1 = document.querySelector(".lineXA1");
+const btnA1 = document.querySelectorAll(".btnA1");
+const blockA1 = document.querySelectorAll(".blockA1");
+
+let count = 0;
+let count2 = 0;
+
+window.addEventListener("resize", function(){
+slider();
+lineXA1.style.left = "-" + count2 * blockA1[0].offsetWidth * count + "px";
+})
+
+function slider(a){
+if(window.innerWidth < 460){
+count = 1;
+}
+else if(window.innerWidth > 459 && window.innerWidth < 800){
+count = 2
+}
+else if(window.innerWidth > 800){
+count = 3
+}
+}
+slider();
+
+btnA1[0].onclick = function(){
+if(count2 > 0){
+count2 = count2 - 1;
+lineXA1.style.left = "-" + count2 * blockA1[0].offsetWidth * count + "px";
+console.log(count2);
+}
+}
+btnA1[1].onclick = function(){
+count2 = count2 + 1;
+if(count2 < blockA1.length / count){
+lineXA1.style.left = "-" + count2 * blockA1[0].offsetWidth * count + "px";
+console.log(count2);
+}
+else{
+count2 = count2 - 1;
+}
+}
+</script>
+  </body>
+</html>
+
+  
