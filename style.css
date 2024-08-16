@@ -38,9 +38,7 @@ user-select:none;
 }
 .blockIcon2{
 max-width:30px;
-margin-left:5px;
-margin-right:5px;
-margin-top:10px;
+margin:5px;
 cursor:pointer;
 user-select:none;
 }
